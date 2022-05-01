@@ -35,6 +35,7 @@ cursor = connect.cursor()
 async def start_MainKeyboard(message: Message):
             # Проверяем наличие пользователя в БД
     cursor = connect.cursor()
+    
     people_id = message.chat.id
     cursor.execute (f"SELECT User_id from users where User_id = {people_id}")
     data = cursor.fetchone()    
