@@ -1,7 +1,7 @@
 from main import bot, dp
 from aiogram.types import Message # aiogram
 from aiogram import types   # aiogram
-from configuration import admin_id, url # Мой конфиг
+from configuration import admin_id, url, connectBD # Мой конфиг
 import keyboards as kb # Кнпоки
 from lxml import etree # Для парсинка валют
 import requests 
@@ -26,7 +26,7 @@ class Form(StatesGroup):
     task_name = State()  # Описание задачи
 
 # Подключаем БД
-connect = psycopg2.connect(host="127.0.0.1", port = 5432, database="postgres", user="dbuser", password="teremok")
+connect = connectBD.func_connect_bd()
 cursor = connect.cursor()
 
 # Комманла старт
