@@ -1,7 +1,8 @@
 from turtle import clear
 import psycopg2
+from configuration import connectBD
 
-connect = psycopg2.connect(host="127.0.0.1", port = 5432, database="postgres", user="artanov", password="Eifcnbr!123")
+connect = connectBD.func_connect_bd()
 cursor = connect.cursor()
 
 class Scripts:
