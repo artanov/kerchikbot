@@ -6,7 +6,7 @@ import keyboards as kb # Кнпоки
 from lxml import etree # Для парсинка валют
 import requests 
 from weather import classweather # Подключаем прогноз погоды
-import psycopg2 # Модуль для подключения к бд
+#import psycopg2 # Модуль для подключения к бд
 from Query import Scripts # Скрипты в бд
 from mykinopoisk import jekaFilm # апи кинопоиска
 
