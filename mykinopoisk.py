@@ -1,14 +1,20 @@
 from kinopoisk_unofficial.kinopoisk_api_client import KinopoiskApiClient
 from kinopoisk_unofficial.request.films.film_request import FilmRequest
 from kinopoisk_unofficial.kinopoisk_api_client import KinopoiskApiClient
+from configuration import KINOPOISK_TOKEN
 
-api_client = KinopoiskApiClient("8bf89bae-e02c-4a04-8522-89e23233dcdd")
+api_client = KinopoiskApiClient(KINOPOISK_TOKEN)
 class jekaFilm:
-    def go_film():
-        request = FilmRequest(444)
+    def go_film_name(film_id):
+        request = FilmRequest(film_id)
         response = api_client.films.send_film_request(request)
-        edit_resopnse = (response.film.name_ru)
-        return edit_resopnse
+        edit_resopnse_name = (response.film.name_ru)
+        return edit_resopnse_name
+    def go_film_desc(film_id):
+        request = FilmRequest(film_id)
+        response = api_client.films.send_film_request(request)
+        edit_resopnse_description = (response.film.description)
+        return edit_resopnse_description
 
 #print(response.[0])
 #for film in response:

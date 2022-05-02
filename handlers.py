@@ -1,3 +1,4 @@
+import asyncio
 from main import bot, dp
 from aiogram.types import Message # aiogram
 from aiogram import types   # aiogram
@@ -24,6 +25,7 @@ dp = Dispatcher(bot, storage=storage)
 class Form(StatesGroup):
     film_name = State()  # Наименование фильма
     task_name = State()  # Описание задачи
+    film_id = State()    #id фильма
 
 # Подключаем БД
 connect = connectBD.func_connect_bd()
@@ -169,7 +171,32 @@ async def command_weather(message: types.Message):
     Scripts.delete_all_favorites(people_id)
     await bot.send_message(message.from_user.id,text ='Все фильмы удалены ✅')
 
-##fsm
+##fsm####################
+@dp.message_handler(commands=['test'])
+async def cmd_start(message: types.Message):
+    # Set state Точка входа в разговор
+    await Form.film_id.set()
+    await message.answer("Введите id фильма:")
+
+@dp.message_handler(state=Form.film_id)
+async def process_name(message: types.Message, state: FSMContext):
+    # Процесс названия фильма 
+    async with state.proxy() as data:
+        data['film_id'] = message.text
+        # And send message
+        #await bot.send_message(message.chat.id, "Фильм добавлен ✅",reply_markup=kb.filmfavorites)
+        #user_id = message.chat.id
+        await bot.send_message(message.chat.id,text="Загружаю данные..")
+        film_id_func = data['film_id']
+        film_name = jekaFilm.go_film_name(film_id_func)
+        film_desc = jekaFilm.go_film_desc(film_id_func)
+        await asyncio.sleep(1) 
+        await bot.send_message(message.chat.id,text=film_name)
+        await asyncio.sleep(1)
+        await bot.send_message(message.chat.id,text=film_desc, reply_markup=kb.FindName)
+        # Finish conversation
+        data.state = None
+
 @dp.message_handler(commands=['addfavoritefilm'])
 async def cmd_start(message: types.Message):
     # Set state Точка входа в разговор
