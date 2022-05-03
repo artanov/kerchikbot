@@ -139,7 +139,7 @@ async def keyList_func(callback_query: types.CallbackQuery):
 
 @dp.callback_query_handler(lambda c: c.data == 'FindName')                               
 async def FindName_Func(callback_query: types.CallbackQuery):
-    text = jekaFilm.go_film()
+    text = jekaFilm.go_film_name(444)
     await callback_query.message.edit_text(text=text, reply_markup=kb.FindName)
 
 @dp.callback_query_handler(lambda c: c.data == 'keyAdd')
