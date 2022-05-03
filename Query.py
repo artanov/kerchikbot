@@ -1,4 +1,3 @@
-from turtle import clear
 import psycopg2
 from configuration import connectBD
 
