@@ -1,9 +1,11 @@
 from kinopoisk_unofficial.kinopoisk_api_client import KinopoiskApiClient
 from kinopoisk_unofficial.request.films.film_request import FilmRequest
 from kinopoisk_unofficial.kinopoisk_api_client import KinopoiskApiClient
+from kinopoisk_unofficial.request.persons.person_by_name_request import PersonByNameRequest
 from configuration import KINOPOISK_TOKEN
 
 api_client = KinopoiskApiClient(KINOPOISK_TOKEN)
+
 class jekaFilm:
     def go_film_name(film_id):
         request = FilmRequest(film_id)
