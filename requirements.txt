@@ -1,0 +1,6 @@
+pyowm
+kinopoisk-api-unofficial-client
+asyncio
+lxml
+requests
+psycopg2
