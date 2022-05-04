@@ -7,12 +7,8 @@ WORKDIR /usr/src/app/
 COPY . /usr/src/app/
 # install dependencies
 RUN pip install -U aiogram 
-RUN pip install lxml
+RUN pip install lxml requests requests asyncio psycopg2
 RUN pip3 install kinopoisk-api-unofficial-client
-RUN pip install requests
-RUN pip install pyowm
-RUN pip install asyncio
-RUN pip install psycopg2
 
 # run app
 CMD ["python", "main.py"]
