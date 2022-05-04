@@ -2,3 +2,5 @@ __pycache__/
 configuration.py
 .DS_Store
 Testing.py
+docker-compose.yml
+dockerfile

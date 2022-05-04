@@ -46,3 +46,13 @@ CREATE TABLE films
     on delete cascade
     on update cascade
 );
+
+CREATE ROLE admindb WITH PASSWORD 'password'
+	SUPERUSER
+	CREATEDB
+	CREATEROLE
+	INHERIT
+	LOGIN
+	NOREPLICATION
+	NOBYPASSRLS
+	CONNECTION LIMIT -1;

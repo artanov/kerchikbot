@@ -131,11 +131,10 @@ async def keyList_func(callback_query: types.CallbackQuery):
             data = cursor.fetchone()    
             if data is None:#если нет выводим сообщение с кнопкой 
                 await callback_query.message.edit_text(text='<b>Задачи отсутствуют 🗒</b>', reply_markup=kb.keyList)
-                print(people_id)
+
             else:#если есть выводим все записи через Scripts.all_tasks()
                 text = Scripts.all_tasks(people_id)
                 await callback_query.message.edit_text(text=text, reply_markup=kb.keyList)
-                print(people_id)
 
 @dp.callback_query_handler(lambda c: c.data == 'FindName')                               
 async def FindName_Func(callback_query: types.CallbackQuery):
