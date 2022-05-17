@@ -7,7 +7,7 @@
     PRIMARY KEY (user_id)
 );
 
-CREATE TABLE films
+ CREATE TABLE films
 (
     film_id int4 NOT NULL GENERATED ALWAYS AS IDENTITY,
 	film_name varchar(50) NULL,

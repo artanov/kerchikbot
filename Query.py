@@ -13,7 +13,7 @@ class Scripts:
         return (str(text)) 
         
     def all_tasks(people_id):   
-        cursor.execute(f"""SELECT task_name FROM todo_list where user_id = {people_id}""")
+        cursor.execute(f"SELECT task_name FROM todo_list where user_id = {people_id}")
         query_results = cursor.fetchall()
         text = '\n\n'.join([', '.join(map(str, x)) for x in query_results])
         return (str(text)) 

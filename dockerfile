@@ -1,6 +1,6 @@
 FROM python:3.8
 LABEL  version = "1.0"
-ENV admin="Artanov"
+#ENV admin="Artanov"
 # set work directory
 WORKDIR /usr/src/app/
 # copy project
@@ -13,3 +13,7 @@ RUN pip3 install kinopoisk-api-unofficial-client
 # run app
 CMD ["python", "main.py"]
 
+#FROM ubuntu:18.04
+#COPY . /app
+#RUN make /app
+#CMD python /app/app.py
