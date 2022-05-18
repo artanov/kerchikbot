@@ -15,4 +15,4 @@ class classweather:
         temp_dict_kelvin["temp_min"]
         temp_dict_kelvin["temp_max"]
         temp_dict_celsius = weather.temperature("celsius")["temp"]  # guess?
-        return temp_dict_celsius
+        return round(temp_dict_celsius)

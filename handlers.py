@@ -106,7 +106,7 @@ async def keyWeather_func(callback_query: types.CallbackQuery):
 @dp.callback_query_handler(lambda c: c.data == "weather")
 async def weather_func(callback_query: types.CallbackQuery):
     text = classweather.get_weather()
-    await callback_query.message.edit_text(text=text, reply_markup=kb.Weather)
+    await callback_query.message.edit_text(text=str(text) +' гадусов', reply_markup=kb.Weather)
 
 
 @dp.callback_query_handler(lambda c: c.data == "keyFilms")
