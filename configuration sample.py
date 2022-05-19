@@ -3,7 +3,7 @@ url = 'http://www.cbr.ru/scripts/XML_daily.asp'
 token_weather    = ''
 token_yandex = ''
 admin_id = ""
-KINOPOISK_TOKEN = ""
+KINOPOISK_TOKEN = "1234"
 
 import psycopg2 # Модуль для подключения к бд
 # Подключаем БД
