@@ -1,8 +1,8 @@
 BOT_TOKEN = ""
 url = 'http://www.cbr.ru/scripts/XML_daily.asp'
 token_weather    = ''
-token_yandex = ''
-admin_id = ""
+token_yandex = '1234'
+admin_id = "1234"
 KINOPOISK_TOKEN = "1234"
 
 import psycopg2 # Модуль для подключения к бд
