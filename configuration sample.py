@@ -1,6 +1,6 @@
 BOT_TOKEN = ""
 url = 'http://www.cbr.ru/scripts/XML_daily.asp'
-token_weather    = '1234'
+token_weather    = '1234567'
 token_yandex = '1234'
 admin_id = "1234"
 KINOPOISK_TOKEN = "1234"
