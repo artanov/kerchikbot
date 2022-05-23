@@ -14,7 +14,7 @@ pipeline {
     stages {
         stage('ssh') {
             steps{
-                sh 'ssh root@robin \'apt git install\'' 
+                sh 'ssh root@robin \'apt-get git install\'' 
             }
         }
     }
