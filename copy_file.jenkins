@@ -12,13 +12,13 @@ pipeline {
         timestamps()
     }
     stages {
-        stage ('Deploy') {
+        stage('Deploy') {
             steps{
                 sshagent(credentials : ['use-the-id-from-credential-generated-by-jenkins']) {
                     sh 'ssh -o StrictHostKeyChecking=no root@batman uptime'
                     sh 'ssh -v root@batman'
                     sh 'scp ./source/filename root@batman:/remotehost/target'
-                }
             }
         }
     }
+}
