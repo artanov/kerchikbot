@@ -1,0 +1,24 @@
+#!groovy test !!!
+// Check ub1 properties
+properties([disableConcurrentBuilds()])
+
+pipeline {
+    agent { 
+        label 'master'
+        }
+        
+    options {
+        buildDiscarder(logRotator(numToKeepStr: '10', artifactNumToKeepStr: '10'))
+        timestamps()
+    }
+    stages {
+        stage ('Deploy') {
+    steps{
+        sshagent(credentials : ['use-the-id-from-credential-generated-by-jenkins']) {
+            sh 'ssh -o StrictHostKeyChecking=no root@batman uptime'
+            sh 'ssh -v root@batman'
+            sh 'scp ./source/filename root@batman:/remotehost/target'
+            }
+        }
+    }
+}
