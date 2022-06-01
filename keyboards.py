@@ -50,7 +50,7 @@ keyFilms = InlineKeyboardMarkup(row_width=3)
 buttons = [
     InlineKeyboardButton(text="Избранное", callback_data="watchthis"),
     # InlineKeyboardButton(text='Мой топ', callback_data='mytop'),
-    InlineKeyboardButton(text="🔍 Поиск фильма", callback_data="SearchFilms"),
+    #InlineKeyboardButton(text="🔍 Поиск фильма", callback_data="SearchFilms"),
     InlineKeyboardButton(text="⏮ Назад", callback_data="MainKeyboard"),
 ]
 keyFilms.add(*buttons)

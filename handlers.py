@@ -161,7 +161,7 @@ async def keySQLfunc(callback_query: types.CallbackQuery):
 @dp.callback_query_handler(lambda c: c.data == "keyFunction")
 async def keyFunction_func(callback_query: types.CallbackQuery):
     await callback_query.message.edit_text(
-        text="<b>Функция это...</b>", reply_markup=kb.keyFunction
+        text="<b>Транзакция является единственной единицей работы. Если транзакция выполнена успешно, все модификации данных, сделанные в течение транзакции, принимаются и становятся постоянной частью базы данных. Если в результате выполнения транзакции происходят ошибки и должна быть произведена отмена или выполнен откат, все модификации данных будут отменены.</b>", reply_markup=kb.keyFunction
     )
 
 
