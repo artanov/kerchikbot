@@ -56,12 +56,12 @@ buttons = [
 keyFilms.add(*buttons)
 
 ##SearchFilms
-SearchFilms = InlineKeyboardMarkup()
-buttons = [
-    InlineKeyboardButton(text="По имени", callback_data="FindName"),
-    InlineKeyboardButton(text="⏮ Назад", callback_data="keyFilms"),
-]
-SearchFilms.add(*buttons)
+#SearchFilms = InlineKeyboardMarkup()
+#buttons = [
+#    InlineKeyboardButton(text="По имени", callback_data="FindName"),
+#    InlineKeyboardButton(text="⏮ Назад", callback_data="keyFilms"),
+#]
+#SearchFilms.add(*buttons)
 
 ##filmfavorites
 filmfavorites = InlineKeyboardMarkup()

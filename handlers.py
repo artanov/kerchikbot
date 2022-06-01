@@ -116,11 +116,11 @@ async def keyFilms_func(callback_query: types.CallbackQuery):
     )
 
 
-@dp.callback_query_handler(lambda c: c.data == "SearchFilms")
-async def SearchFilms_func(callback_query: types.CallbackQuery):
-    await callback_query.message.edit_text(
-        text="<b>Поиск фильма:</b>", reply_markup=kb.SearchFilms
-    )
+#@dp.callback_query_handler(lambda c: c.data == "SearchFilms")
+#async def SearchFilms_func(callback_query: types.CallbackQuery):
+#    await callback_query.message.edit_text(
+#        text="<b>Поиск фильма:</b>", reply_markup=kb.SearchFilms
+#    )
 
 
 @dp.callback_query_handler(lambda c: c.data == "watchthis")
